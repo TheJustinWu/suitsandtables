@@ -2,7 +2,9 @@
   <head>
     <title>Suits and Tables</title>
     <link rel="stylesheet" href="./css/style.css"></link>
+    <link href="./css/hover-min.css" rel="stylesheet" media="all">
     <script src="./js/scripts.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
   </head>
   <body>
 
@@ -12,9 +14,112 @@
     </section>
 
     <!-- Justin -->
-    <section id="featured">
-    <h1 id="hello">SUP DUDES</h1>
-    </section>
+
+    <!-- Featured Venues -->
+    <section class="featured">
+
+    <!-- Top Right Tab -->
+    <div class="topvenues">
+      <h4>Top Chicago Venues</h4>
+
+      <!-- Dropdown Menu -->
+
+      <div class="dropdown">
+      <a class="change">Change City<div class="arrow-down"></div></a>
+      
+      <div class="submenu">
+      <ul class="root">
+      <li ><a href="#Chicago">Chicago</a></li>
+      <li ><a href="#New York">New York</a></li>
+      <li ><a href="#San Francisco">San Francisco</a></li>
+      <li ><a href="#Seattle">Seattle</a></li>
+      </ul>
+      </div>
+      
+      </div>
+
+    </div>
+
+    <!-- Restaurants -->
+    <div id="restos">
+
+    <!-- Left Box  -->
+    <div class="slider glow">
+
+    <!-- Image -->
+    <a href=""><img class="feature" src="./img/312TR.jpg" alt="" /></a>
+
+    <!-- Trending -->
+    <div class="trending"><img src="./img/arrow.svg" alt="" />27</div>
+
+    <!-- Description -->
+    <div class="description">
+    <h2>312 Chicago</h2>
+    <p><b>136 N Lasalle St, Loop - Chicago, IL</b></p>
+    <p>Italian | <span style="color:#c6a900">$$</span></p>
+    <p class="info">Ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quaet urna molla pibus ac facilisis inis orm...</p>
+    </div>
+
+
+    <!-- Buttons -->
+    <a class="button1 bubble-top" href="">DETAILS</a>
+    <a class="button2 bubble-top" href="">ADD TO MY EVENTS</a>
+    <a class="button3 bubble-top2" href="">BOOK NOW</a>
+
+    </div>
+
+    <!-- Middle Box  -->
+    <div class="slider glow">
+
+    <!-- Image -->
+    <a href=""><img class="feature" src="./img/luxbar.jpg" alt="" /></a>
+
+    <!-- Trending -->
+    <div class="trending"><img src="./img/arrow.svg" alt="" />27</div>
+
+    <!-- Description -->
+    <div class="description">
+    <h2>Luxbar</h2>
+    <p><b>18 E Bellevue Pl, Gold Coast - Chicago, IL</b></p>
+    <p>American | <span style="color:#c6a900">$$</span></p>
+    <p class="info">Ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quaet urna molla pibus ac facilisis inis orm...</p>
+    </div>
+
+    <!-- Buttons -->
+    <a class="button1 bubble-top" href="">DETAILS</a>
+    <a class="button2 bubble-top" href="">ADD TO MY EVENTS</a>
+    <a class="button3 bubble-top2" href="">BOOK NOW</a>
+
+    </div>
+
+    <!-- Right Box  -->
+    <div class="slider glow">
+
+    <!-- Image -->
+    <a href=""><img class="feature" src="./img/girlandgoat.jpg" alt="" /></a>
+
+    <!-- Trending -->
+    <div class="trending"><img src="./img/arrow.svg" alt="" />27</div>
+
+    <!-- Description -->
+    <div class="description">
+    <h2>Girl & the Goat</h2>
+    <p><b>809 W Randolph St, West Loop - Chicago, IL</b></p>
+    <p>American | <span style="color:#c6a900">$$$</span></p>
+    <p class="info">Ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quaet urna molla pibus ac facilisis inis orm...</p>
+    </div> 
+
+    <!-- Buttons -->
+    <a class="button1 bubble-top" href="">DETAILS</a>
+    <a class="button2 bubble-top" href="">ADD TO MY EVENTS</a>
+    <a class="button3 bubble-top2" href="">BOOK NOW</a>
+
+
+    </div>
+
+  </div>
+
+  </section>
 
     <!-- Angelina -->
     <section id="signup">
@@ -26,5 +131,54 @@
 
     </footer>
 
+
+<!-- JQuery For ChangeCity Menu -->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js
+"></script>;
+<script type="text/javascript" >
+$(document).ready(function()
+{
+
+$(".change").click(function()
+{
+var X=$(this).attr('id');
+if(X==1)
+{
+$(".submenu").hide();
+$(this).attr('id', '0'); 
+}
+else
+{
+$(".submenu").show();
+$(this).attr('id', '1');
+}
+
+});
+
+//Mouse click on sub menu
+$(".submenu").mouseup(function()
+{
+return false
+});
+
+//Mouse click on my account link
+$(".change").mouseup(function()
+{
+return false
+});
+
+
+//Document Click
+$(document).mouseup(function()
+{
+$(".submenu").hide();
+$(".change").attr('id', '');
+});
+});
+</script>
+
+
   </body>
+
 </html>
